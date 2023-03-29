@@ -9,10 +9,16 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-D1 = "C:\Users\hp\OneDrive\Statistics_and_Trends\Datas\D1.csv"
-D2 = "C:\Users\hp\OneDrive\Statistics_and_Trends\Datas\D2.csv"
-D3 = "C:\Users\hp\OneDrive\Statistics_and_Trends\Datas\D3.csv"
-D4 = "C:\Users\hp\OneDrive\Statistics_and_Trends\Datas\D4.csv"
-D5 = "C:\Users\hp\OneDrive\Statistics_and_Trends\Datas\D5.csv"
-D6 = "C:\Users\hp\OneDrive\Statistics_and_Trends\Datas\D6.csv"
+d1 = "./D1.csv"
+d2 = "./D2.csv"
+
+def data(fn):
+    d = pd.read_csv(fn)
+    df = pd.DataFrame(d)
+    dfn = df.dropna()
+    dt = pd.DataFrame.transpose(dfn)
+    return(dfn, dt)
+
+df, dt = data(d1)
+print(dt)
 
