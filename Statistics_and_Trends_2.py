@@ -53,7 +53,7 @@ print(heat_corr)
 heatdf1, heatdt1 = data(us)
 heat_corr1 = heatdf1.corr()
 fig1, ax1 = plt.subplots(figsize = (10,10))
-im = ax1.imshow(heat_corr, cmap = "YlGn")
+im = ax1.imshow(heat_corr, cmap = "RdPu")
 cbar = ax1.figure.colorbar(im, 
                           ax = ax1,
                           shrink = 0.5 )
@@ -70,7 +70,7 @@ ax1.set_title("Gaseous Emissions - US", size = 20)
 for i in range(len(heat_corr1.columns)):
     for j in range(len(heat_corr1.columns)):
         text = ax1.text(j, i, round(heat_corr1.to_numpy()[i, j], 2),
-                       ha = "center", va = "center", color = "orange")
+                       ha = "center", va = "center", color = "red")
 fig1.tight_layout()
 print(heat_corr1)
 
